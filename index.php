@@ -1,34 +1,34 @@
 <?
-session_start(); 
+session_start();
 include "info.php";
 	mysql_connect( $dbHost,$dbUser,$dbPass ) or die("Error ! Non connect BD"); // eiiiaeo e AA
 	mysql_query('SET NAMES cp1251');
 	mysql_select_db($dbName); // auai? AA
-	
 
-//безопасность параметров
+
+//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
   	$id1 =  $_REQUEST['id1']; $id1 =strip_tags($id1);
   	$id2 =  $_REQUEST['id2']; $id2 =strip_tags($id2);
   	$id3 =  $_REQUEST['id3']; $id3 =strip_tags($id3);
   	$id4 =  $_REQUEST['id4']; $id4 =strip_tags($id4);
 
-//раскодируем	
+//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 $query = 'SELECT * FROM `1` WHERE `kod` = "'.$id1.'"';
-$res = mysql_query($query) or die("ОШИБКА ! Немогу выполнить запрос формализации");
-//проверим  на правильность запроса
+$res = mysql_query($query) or die("пїЅпїЅпїЅпїЅпїЅпїЅ ! пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ");
+//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ  пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 	if (!mysql_num_rows($res) > 0 )
-	{	//результат запроса неудачный
-		$id1=encode2($id1,$Pass); 	
+	{	//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+		$id1=encode2($id1,$Pass);
 	}
 
-//раскодируем	
+//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 //	$id3=encode2($id3,$Pass);
-	
+
 	if (empty($id1))  {$id1='non';}
 	if (empty($id2))  {$id2='non';}
 	if (empty($id3))  {$id3='2014-01-01';}
 	if (empty($id4))  {$id4='non';}
-	
+
 //$_SESSION['url']="http://".$_SERVER['SERVER_NAME']."?id1=".encode2($id1,$Pass)."&id2=".encode2($id2,$Pass)."&id3=".encode2($id3,$Pass);
 $_SESSION['url']="http://".$_SERVER['SERVER_NAME']."?id1=".encode2($id1,$Pass)."&id2=".$id2."&id3=".$id3;
 
@@ -44,20 +44,23 @@ $_SESSION['url']="http://".$_SERVER['SERVER_NAME']."?id1=".encode2($id1,$Pass)."
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
 <meta name="mailru-verification" content="cbffd5dcdee84cd2" />
-<title>POSM</title>
+<title>POSM  РІ</title>
 
 
 </head>
 
 
-<!--<link rel="stylesheet" type="text/css" href="http://sity812.ru/menunew/css/demo.css" />-->        
+
+
+
+<!--<link rel="stylesheet" type="text/css" href="http://sity812.ru/menunew/css/demo.css" />-->
 <!--<link rel="stylesheet" type="text/css" href="http://sity812.ru/menunew/css/style1.css" />-->
 
 
 <link rel="stylesheet" type="text/css" href="css/1.css" />
 <!--<script src="//code.jquery.com/jquery-1.10.2.min.js"></script>-->
 <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
-<!--библиотека анимации-->
+<!--пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ-->
 <!--https://daneden.me/animate/-->
 <script type="text/javascript" src="css/animate.css"></script>
 <link href="css/animate.css" rel="stylesheet" type="text/css">
@@ -79,7 +82,7 @@ $(function() {
 </script>
 <!--<script>
 	$(document).ready(function() {
-		
+
 		$('#navigation > li').hover(
   			function () {
   				 $('a',$(this)).stop().animate({'marginLeft':'-2px'},200);
@@ -88,7 +91,7 @@ $(function() {
    				$('a',$(this)).stop().animate({'marginLeft':'-85px'},200);
   			}
  );
-		
+
 		});
 </script>
 -->
@@ -98,23 +101,23 @@ $(function() {
      </div>
 			<!--<section class="main">-->
 				<!--<img src="/img/star_kids.png" width="150" height="56" />-->
-              <!--  <<!--center><h1>8-800-700-81-28 бесплатный звонок LV</h1></center>-->
-           <!--</section> -->   
+              <!--  <<!--center><h1>8-800-700-81-28 пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ LV</h1></center>-->
+           <!--</section> -->
     </div>
-    
+
             <div id="container">
                     <div id="content" class="column">
-                        <? include "start.php"; ?> 
+                        <? include "start.php"; ?>
                     </div>
                     <div id="left" class="column">
-                                
+
                                         <ul  class="ca-menu">
                                             <li>
                                                 <a href="<? echo $_SESSION['url']."&id4=3"; ?>">
                                                     <span class="ca-icon">&#73;</span>
                                                     <div class="ca-content">
-                                                        <h2 class="ca-main">Фотографии</h2>
-                                                        <h3 class="ca-sub">Полное собрание</h3>
+                                                        <h2 class="ca-main">пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ</h2>
+                                                        <h3 class="ca-sub">пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ</h3>
                                                     </div>
                                                 </a>
                                             </li>
@@ -122,8 +125,8 @@ $(function() {
                                                 <a href="<? echo $_SESSION['url']."&id4=2"; ?>">
                                                     <span class="ca-icon">&#178;</span>
                                                     <div class="ca-content">
-                                                        <h2 class="ca-main">Описание</h2>
-                                                        <h3 class="ca-sub">Полные данные</h3>
+                                                        <h2 class="ca-main">пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ</h2>
+                                                        <h3 class="ca-sub">пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ</h3>
                                                     </div>
                                                 </a>
                                             </li>
@@ -131,8 +134,8 @@ $(function() {
                                                 <a href="#">
                                                     <span class="ca-icon">&#76;</span>
                                                     <div class="ca-content">
-                                                        <h2 class="ca-main">Поиск</h2>
-                                                        <h3 class="ca-sub">Найти больше</h3>
+                                                        <h2 class="ca-main">пїЅпїЅпїЅпїЅпїЅ</h2>
+                                                        <h3 class="ca-sub">пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ</h3>
                                                     </div>
                                                 </a>
                                             </li>
@@ -140,21 +143,21 @@ $(function() {
                                                 <a href="<? echo $_SESSION['url']."&id4=1"; ?>">
                                                     <span class="ca-icon">&#64;</span>
                                                     <div class="ca-content">
-                                                        <h2 class="ca-main">Связь</h2>
-                                                        <h3 class="ca-sub">Напишите нам</h3>
+                                                        <h2 class="ca-main">пїЅпїЅпїЅпїЅпїЅ</h2>
+                                                        <h3 class="ca-sub">пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ</h3>
                                                     </div>
                                                 </a>
                                             </li>
                                         </ul>
-                                
+
                     </div>
-            
+
                     <div id="right" class="column"></div>
             </div>
-            
+
     <div id="footer">
         <center>
-                <img style="vertical-align: middle" src="img/flash_POSM_16-02-15.png" alt="POSM" width="25" height="25" /> 
+                <img style="vertical-align: middle" src="img/flash_POSM_16-02-15.png" alt="POSM" width="25" height="25" />
                 All rights reserved 2015  POSM v2.
          </center>
      </div>
